@@ -29,52 +29,28 @@ struct ContentView: View {
     @State private var cards = Array<Card>(repeating: Card.example, count: 5)
     
     var body: some View {
-        VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index])
+
+        ZStack {
+            TitleView()
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(0..<cards.count, id: \.self) { index in
+                            CardView(card: cards[index])
+                        }
                     }
                 }
+                .padding(.top, 60)
+                CardInfoView(card: Card.example)
+                Spacer()
+                CardBarcodeView()
+                    .padding(.top, 15)
+                    .padding(.bottom, 10)
+                    .padding(.horizontal, 15)
             }
+            
         }
-        Spacer()
-        
-//        ZStack {
-//            TitleView()
-//                .blur(radius: show ? 20 : 0)
-//                .opacity(showCard ? 0.4 : 1)
-//                .offset(y: showCard ? -150 : 0)
-//                .animation(
-//                    .default
-//                    .delay(0.1) , value: showCard
-//                )
-//
-//            VStack {
-//                ScrollView(.horizontal, showsIndicators: false) {
-//                    HStack {
-//                        ForEach(0..<cards.count, id: \.self) { index in
-//                            CardView(card: cards[index])
-//                                .scaleEffect(0.6)
-//                            //                            .stacked(at: index, in: cards.count)
-//                            //                            .rotated(at: index, in: cards.count)
-//                            //                            .scaled(at: index, in: cards.count)
-//                        }
-//                    }
-//                }
-//            }
-//
-//            Spacer()
-//
-//            VStack {
-//                CardView(card: Card.example)
-//            }
-//
-//            BottomCardView()
-//                .offset(x:0, y: showCard ? 360 : 1000)
-//                .blur(radius: show ? 20 : 0)
-//                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8), value: showCard)
-//        }
+        .background(Color.gray.opacity(0.2))
     }
 }
 

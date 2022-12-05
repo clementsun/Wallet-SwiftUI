@@ -13,34 +13,35 @@ struct CardView: View {
     @State private var showCard = false
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(card.title)
-                    .font(.title)
-                    .foregroundColor(Color.white)
-                    .fontWeight(Font.Weight.semibold)
-                    .foregroundColor(.black)
-                
-                if showCard {
-                    Text(card.subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(card.title)
+                        .font(.title)
+                        .foregroundColor(Color.white)
+                        .fontWeight(Font.Weight.semibold)
+                        .foregroundColor(.black)
+                    
+                    if showCard {
+                        Text(card.subtitle)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
                 }
+                .padding(.top, 10)
+                .padding(.horizontal, 20)
                 Spacer()
             }
-            .padding(.top, 10)
-            .padding(.horizontal, 20)
-            Spacer()
+            .frame(width: 238, height: 150)
+            .background(Color.gray)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: RoundedCornerStyle.continuous))
+            .shadow(radius: 10)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                showCard.toggle()
+            }
         }
-        .frame(width: 238, height: 150)
-        .background(Color.gray)
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: RoundedCornerStyle.continuous))
-        .shadow(radius: 10)
-        .contentShape(Rectangle())
-        .onTapGesture {
-            showCard.toggle()
-        }
-            
 
         
         

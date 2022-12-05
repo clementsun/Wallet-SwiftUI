@@ -8,29 +8,52 @@
 import SwiftUI
 
 struct TitleView: View {
+    @State private var offset = CGFloat.zero
+    @State private var closeOffset = CGFloat.zero
+    @State private var openOffset = CGFloat.zero
+    
     var body: some View {
-        VStack {
-            HStack {
-                Text("List of Cards")
-                    .font(Font.largeTitle)
-                    .fontWeight(.semibold)
-                Spacer()
-                Button("+") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                VStack {
+                    HStack {
+                        Button(action: {
+                            self.offset = self.openOffset
+                        }){
+                            Image(systemName: "list.bullet")
+                        }
+                        Spacer()
+                        Text("Your Card")
+                        Spacer()
+                    }
+                    .padding(.horizontal, 10)
+                    Spacer()
                 }
-                .frame(width: 20, height: 20, alignment: Alignment.center)
-                .foregroundColor(Color.white)
-                .font(Font.subheadline)
-                .fontWeight(Font.Weight.bold)
-                .background(Color.black)
-                .clipShape(Circle())
+                MenuView()
+                    .background(Color.white.edgesIgnoringSafeArea(.bottom))
+                    .frame(width: geometry.size.width * 0.7)
+                    .offset(x: self.offset)
+                    .onAppear(perform: {
+                        self.offset = geometry.size.width * -1
+                        self.closeOffset = self.offset
+                        self.openOffset = CGFloat.zero
+                    })
+                    .animation(.default, value: self.offset)
             }
-            .padding()
-            Image("background")
-                .opacity(0.3)
-                .offset(x:0, y:-40)
-            Spacer()
-            
+            .gesture(DragGesture(minimumDistance: 5)
+                .onChanged{ value in
+                    if (self.offset < self.openOffset) {
+                        self.offset = self.closeOffset + value.translation.width
+                    }
+                }
+                .onEnded { value in
+                    if (value.location.x > value.startLocation.x) {
+                        self.offset = self.openOffset
+                    } else {
+                        self.offset = self.closeOffset
+                    }
+                }
+            )
         }
     }
 }

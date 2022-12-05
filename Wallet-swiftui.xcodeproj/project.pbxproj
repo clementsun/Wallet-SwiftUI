@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		EB8D590F293947F70075C390 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D590E293947F70075C390 /* CardView.swift */; };
-		EB8D5911293948580075C390 /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D5910293948580075C390 /* BottomCardView.swift */; };
 		EB8D5913293948D40075C390 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D5912293948D40075C390 /* TitleView.swift */; };
 		EB8D591729396A6D0075C390 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D591629396A6D0075C390 /* Card.swift */; };
+		EB8D5919293D7DC80075C390 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D5918293D7DC80075C390 /* MenuView.swift */; };
+		EB8D591B293E64070075C390 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D591A293E64070075C390 /* CardInfoView.swift */; };
+		EB8D591D293E64510075C390 /* CardBarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D591C293E64510075C390 /* CardBarcodeView.swift */; };
+		EB8D591F293EAFF60075C390 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D591E293EAFF60075C390 /* TabBar.swift */; };
+		EB8D5923293EB0B80075C390 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D5922293EB0B80075C390 /* SettingView.swift */; };
+		EB8D5925293EB0C20075C390 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D5924293EB0C20075C390 /* SearchView.swift */; };
 		EBA43E152925986C00D3805A /* Wallet_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA43E142925986C00D3805A /* Wallet_swiftuiApp.swift */; };
 		EBA43E172925986C00D3805A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA43E162925986C00D3805A /* ContentView.swift */; };
 		EBA43E192925986E00D3805A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBA43E182925986E00D3805A /* Assets.xcassets */; };
@@ -19,9 +24,14 @@
 
 /* Begin PBXFileReference section */
 		EB8D590E293947F70075C390 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		EB8D5910293948580075C390 /* BottomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
 		EB8D5912293948D40075C390 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		EB8D591629396A6D0075C390 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		EB8D5918293D7DC80075C390 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		EB8D591A293E64070075C390 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
+		EB8D591C293E64510075C390 /* CardBarcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBarcodeView.swift; sourceTree = "<group>"; };
+		EB8D591E293EAFF60075C390 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		EB8D5922293EB0B80075C390 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		EB8D5924293EB0C20075C390 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EBA43E112925986C00D3805A /* Wallet-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wallet-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBA43E142925986C00D3805A /* Wallet_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet_swiftuiApp.swift; sourceTree = "<group>"; };
 		EBA43E162925986C00D3805A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,14 +71,19 @@
 		EBA43E132925986C00D3805A /* Wallet-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				EBA43E142925986C00D3805A /* Wallet_swiftuiApp.swift */,
-				EBA43E162925986C00D3805A /* ContentView.swift */,
-				EB8D591629396A6D0075C390 /* Card.swift */,
-				EB8D5912293948D40075C390 /* TitleView.swift */,
-				EB8D5910293948580075C390 /* BottomCardView.swift */,
-				EB8D590E293947F70075C390 /* CardView.swift */,
 				EBA43E182925986E00D3805A /* Assets.xcassets */,
+				EB8D591629396A6D0075C390 /* Card.swift */,
+				EB8D591C293E64510075C390 /* CardBarcodeView.swift */,
+				EB8D591A293E64070075C390 /* CardInfoView.swift */,
+				EB8D590E293947F70075C390 /* CardView.swift */,
+				EBA43E162925986C00D3805A /* ContentView.swift */,
+				EB8D5918293D7DC80075C390 /* MenuView.swift */,
 				EBA43E1A2925986E00D3805A /* Preview Content */,
+				EB8D5924293EB0C20075C390 /* SearchView.swift */,
+				EB8D5922293EB0B80075C390 /* SettingView.swift */,
+				EB8D591E293EAFF60075C390 /* TabBar.swift */,
+				EB8D5912293948D40075C390 /* TitleView.swift */,
+				EBA43E142925986C00D3805A /* Wallet_swiftuiApp.swift */,
 			);
 			path = "Wallet-swiftui";
 			sourceTree = "<group>";
@@ -151,12 +166,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8D591F293EAFF60075C390 /* TabBar.swift in Sources */,
+				EB8D5923293EB0B80075C390 /* SettingView.swift in Sources */,
+				EB8D5919293D7DC80075C390 /* MenuView.swift in Sources */,
 				EBA43E172925986C00D3805A /* ContentView.swift in Sources */,
 				EB8D591729396A6D0075C390 /* Card.swift in Sources */,
-				EB8D5911293948580075C390 /* BottomCardView.swift in Sources */,
+				EB8D591D293E64510075C390 /* CardBarcodeView.swift in Sources */,
 				EB8D590F293947F70075C390 /* CardView.swift in Sources */,
 				EBA43E152925986C00D3805A /* Wallet_swiftuiApp.swift in Sources */,
+				EB8D591B293E64070075C390 /* CardInfoView.swift in Sources */,
 				EB8D5913293948D40075C390 /* TitleView.swift in Sources */,
+				EB8D5925293EB0C20075C390 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +308,12 @@
 				DEVELOPMENT_TEAM = DM78Y6XH6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +321,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.clementsun.Wallet-swiftui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,11 +341,12 @@
 				DEVELOPMENT_TEAM = DM78Y6XH6X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,9 +354,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.clementsun.Wallet-swiftui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
