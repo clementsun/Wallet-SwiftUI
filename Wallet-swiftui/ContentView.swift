@@ -26,6 +26,8 @@ struct ContentView: View {
     @State var show = false
     @State var viewState = CGSize.zero
     @State var showCard = false
+    @State private var snappedItem = 0.0
+    @State private var draggingItem = 0.0
     @State private var cards = Array<Card>(repeating: Card.example, count: 5)
     
     var body: some View {
@@ -33,14 +35,36 @@ struct ContentView: View {
         ZStack {
             TitleView()
             VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<cards.count, id: \.self) { index in
-                            CardView(card: cards[index])
+                ZStack {
+                    ForEach(0..<cards.count, id: \.self) { index in
+                        ZStack {
+                            VStack {
+                                CardView(card: cards[index])
+                                Text("Current index: \(index)")
+                                Text("Distance: \(distance(index))")
+                            }
                         }
+                        .scaleEffect(1.0 - abs(distance(index)) * 0.5)
+                        .opacity(1.0 - abs(distance(index)) * 0.6)
+                        .offset(x: xOffset(index), y:0)
+                        .zIndex(1.0 - abs(distance(index)) * 0.1)
                     }
                 }
-                .padding(.top, 60)
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            draggingItem = snappedItem + value.translation.width / 100
+                        }
+                        .onEnded { value in
+                            withAnimation {
+                                draggingItem = snappedItem + value.predictedEndTranslation.width / 100
+                                draggingItem = round(draggingItem).remainder(dividingBy: Double(cards.count))
+                                snappedItem = draggingItem
+                            }
+                        }
+                )
+                .padding(.top, 50)
+
                 CardInfoView(card: Card.example)
                 Spacer()
                 CardBarcodeView()
@@ -48,9 +72,17 @@ struct ContentView: View {
                     .padding(.bottom, 10)
                     .padding(.horizontal, 15)
             }
-            
         }
         .background(Color.gray.opacity(0.2))
+    }
+    
+    func distance(_ item: Int) -> Double {
+        return (draggingItem - Double(item)).remainder(dividingBy: Double(cards.count))
+    }
+    
+    func xOffset(_ item: Int) -> Double {
+        let angle = Double.pi / (Double(cards.count)) * distance(item)
+        return sin(angle) * 200
     }
 }
 
